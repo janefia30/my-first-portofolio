@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Background from './bali.png';
-import Foto from "./assets/img/download.png";
-import { Button } from "./components";
+import Background from './bgmoss.png';
+
+import Icon from "./assets/img/calendar_view_day_24px.png";
 import {
     BrowserRouter as Router,
     Switch,
@@ -17,68 +17,73 @@ class App extends Component {
         };
     }
 
+    componentDidMount() {
+        const handler = e => this.setState({ matches: e.matches });
+        window.matchMedia("(min-width: 648px)").addListener(handler);
+    }
+
+
 
     render() {
         const { matches } = this.state
+
         return (
             <Router>
+
                 <div style={styles.background}>
                     <div style={styles.overlay}>
-
-
+                        <div style={{ display: 'flex', position: "absolute", width: "100%", backgroundColor: "rgba(255, 255, 255, 0.75)", justifyContent: 'center' }}>
+                        </div>
                         <Switch>
 
                             <Route path="/">
                                 <div style={styles.container}>
-                                    <div>
-                                        <center>  <img src={Foto} alt="" style={{ height: 168, width: 150 }} /></center>
+                                    <div style={styles.gogreen}>
+                                        GO GREEN
+                                </div>
+                                    <div style={styles.path}>
+                                        <img src={Icon} alt="" />
                                     </div>
-                                    <div style={matches ? styles.h1 : styles.h2}>
-                                        A Better way to <div style={styles.travel}>travel  to bali</div>
-                                    </div>
-                                    <div style={styles.wrapperScroll}>
-                                        <p style={styles.textScroll}>Cheapest and Easyer</p>
-                                    </div>
-                                    <div style={styles.wrapperInput}>
-
-                                        <button style={styles.button1} >Red more</button>
-                                        <button style={styles.button} >Reservation</button>
-                                    </div>
-
-
+                                    <div style={styles.make}>
+                                        Make It Green
+                                </div>
+                                    <div style={styles.now}>
+                                        Now more than ever. Our planet is need our
                                 </div>
 
+
+                                    <div style={styles.rectangle} />
+                                    <div style={styles.Do}>
+                                        Do it Now
+                                </div>
+                                </div>
                             </Route>
                         </Switch>
                     </div>
                 </div>
             </Router>
 
+
         );
     }
 }
-
 let w = window.innerWidth;
 let h = window.innerHeight;
 const styles = {
     background: {
-        display: 'flex',
         backgroundImage: `url(${Background})`,
-        /*full height*/
-        height: '100%',
-        backgoundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-    },
-    overlay: {
-        backgroundColor: "rgba(81, 77, 67, 0.7)",
-        height: h,
-        width: '100%'
-    },
-    container: {
         display: 'flex',
-        flexDirection: 'column',
-
+        position: 'absolute',
+        width: '1497px',
+        height: '842px',
+        left: '0px',
+        top: '0px',
+        flex: 4,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     topText: {
         alignSelf: 'center',
@@ -91,97 +96,97 @@ const styles = {
         padding: 10,
         fontWeight: 'bold'
     },
-    h1: {
-        alignSelf: 'center',
-        marginTop: 50,
-        color: 'white',
-        fontSize: 40,
-        textAlign: 'center',
-        maxWidth: 300,
-        fontFamily: 'pacifico',
+
+    gogreen: {
+        position: 'absolute',
+        left: '73px',
+        top: '57px',
+
+        fontFamily: 'Poppins',
+        fontstyle: 'normal',
+        fontweight: 'normal',
+        fontsize: '24px',
+        lineheight: '36px',
+
+        /* identical to box height */
+
+        textalign: 'center',
 
         color: '#FFFFFF'
+    },
+    make: {
+        position: 'absolute',
+        left: '471px',
+        top: '253px',
+        display: 'flex',
+        borderRadius: 10,
+        marginRight: 16,
+
+        fontFamily: 'Poppins',
+        fontStyle: 'normal',
+        fontWeight: '800',
+        fontSize: '48px',
+        lineHeight: '72px',
+        /* identical to box height */
+
+
+        color: '#FFFFFF'
+    },
+    path: {
+
+        position: 'absolute',
+        width: '48px',
+        height: '48px',
+        left: '1160px',
+        top: '51px',
 
     },
-    h2: {
-        alignSelf: 'center',
-        marginTop: 50,
-        color: 'white',
-        fontSize: 36,
+    now: {
+        position: 'absolute',
+        left: '380px',
+        top: '325px',
 
-        textAlign: 'center'
+        fontFamily: 'Poppins',
+        fontStyle: 'normal',
+        fontWeight: 'normal',
+        fontSize: '24px',
+        lineHeight: '36px',
+        /* identical to box height */
+
+        textAlign: 'center',
+
+        color: '#FFFFFF',
     },
-    wrapperInput: {
-        display: 'flex',
-        alignSelf: 'center',
-        marginTop: 60
-    },
-    bgInput: {
-        display: 'flex',
-        backgroundColor: '#fff',
-        borderRadius: 40,
-        marginRight: 16
-    },
-    input: {
+    Do: {
         position: 'absolute',
-        width: '150px',
-        height: '40px',
-        left: '400px',
-        top: '481px',
-        fontFamily: 'pacifico',
-        background: "rgba(22, 20, 50, 0.80)",
+        left: '582px',
+        top: '410px',
+
+        fontFamily: 'Poppins',
+        fontStyle: 'normal',
+        fontWeight: 600,
+        fontSize: '24px',
+        lineHeight: '36px',
+        /* identical to box height */
+
+
+        color: '#FFFFFF',
     },
-    input2: {
-        borderRadius: 30,
-        padding: 10,
-        borderStyle: 'none',
-        fontSize: 14,
+    rectangle: {
         position: 'absolute',
-        width: '1280px',
-        height: '720px',
-        left: '0px',
-        top: '0px',
+        width: '195px',
+        height: '55px',
+        left: '542px',
+        top: '400px',
+
+        background: '#E67E22',
+        borderRadius: '100px'
     },
-    button: {
-        position: 'absolute',
-        width: '156px',
-        height: '46px',
-        left: '646px',
-        top: '481px',
-        fontFamily: 'pacifico',
-        background: '#FCB371',
+    overlay: {
+        backgroundColor: "",
+        height: h,
+        width: '100%'
     },
-    button1: {
-        position: 'absolute',
-        width: '156px',
-        height: '46px',
-        left: '450px',
-        top: '481px',
-        fontFamily: 'pacifico',
-        background: '#FFFF',
-    },
-    wrapperScroll: {
-        display: 'flex', alignSelf: 'center', marginTop: 20, flexDirection: 'column'
-    },
-    textScroll: {
-        color: '#fff', maxWidth: 150, textAlign: 'center'
-    },
-    icon: {
-        alignSelf: 'center'
-    },
-    travel: {
-        color: '#FCB371'
-    },
-    section: {
-        margin: 8,
-        padding: 8,
-        borderStyle: 'groove',
-        borderWidth: 1,
-        color: '#000'
-    },
-    Link: {
-        textDecoration: 'none'
-    }
-};
+}
 
 export default App;

@@ -5,9 +5,11 @@
   "dependencies": {
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-responsive": "^8.0.1",
     "react-router-dom": "^5.1.2",
     "react-script": "^2.0.5",
-    "react-scripts": "^2.1.8"
+    "react-scripts": "^2.1.8",
+    "responsive-react": "^3.0.2"
   },
   "scripts": {
     "start": "react-scripts start",

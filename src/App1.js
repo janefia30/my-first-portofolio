@@ -98,6 +98,10 @@ const styles = {
     backgoundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   overlay: {
     backgroundColor: "rgba(81, 77, 67, 0.7)",
